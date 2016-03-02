@@ -1,6 +1,9 @@
 
 (defpackage :utils
-  (:use :cl))
+  (:use :cl)
+  (:export
+   #:*solr-path*
+   #:*test-core*))
 
 (defpackage :search
   (:use :cl :cl-json :drakma :utils))

@@ -5,7 +5,9 @@
     (cl-json:decode-json-from-string
      (drakma:http-request
       (concatenate 'string 
-		   "http://localhost:8983/solr/rafael-teste/select?q="
+		   *solr-path*
+		   *test-core*
+		   "/select?q="
 		   query-string
 		   "&wt=json")))))
     
@@ -15,6 +17,8 @@
 	      (cl-json:decode-json-from-string
 		  (drakma:http-request
 		   (concatenate 'string 
-				"http://localhost:8983/solr/rafael-teste/select?q="
+				*solr-path*
+				*test-core*
+				"/select?q="
 				(format nil "~a&start=~a&rows=~a" q-value start rows)
 				"&wt=json"))))
