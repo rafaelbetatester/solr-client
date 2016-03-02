@@ -1,5 +1,4 @@
-(ql:quickload :drakma)
-(ql:quickload :cl-json)
+(in-package search)
 
 (defun do-search (&rest terms)
   (let ((query-string (format nil "~{~A~^+AND+~}" terms)))

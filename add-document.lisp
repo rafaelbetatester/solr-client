@@ -1,4 +1,5 @@
 ;;;;;; Dica -> Posso usar cxml library
+(in-package add-document)
 
 (defun keys-values-to-xml-string (keys-values-list)
   (with-output-to-string (stream)
