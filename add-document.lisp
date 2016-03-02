@@ -14,7 +14,7 @@
 
 (defun do-add (keys-values-list)
   (drakma:http-request
-   "http://localhost:8983/solr/rafael-teste/update"
+   (concatenate 'string *solr-path* *test-core* "/update")
    :method :post
    :content-type "application/xml"
    :content ( keys-values-to-xml-string
@@ -22,7 +22,7 @@
 
 (defun commit-adds ()
   (drakma:http-request
-   "http://localhost:8983/solr/rafael-teste/update"
+   (concatenate 'string *solr-path* *test-core* "/update")
    :method :post
    :content-type "application/xml"
    :content "<commit></commit>"))
